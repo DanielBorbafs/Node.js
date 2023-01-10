@@ -1,0 +1,12 @@
+console.log(this === global) //false
+console.log(this === module) // false
+
+console.log(this === module.exports) // True
+console.log(this === exports)
+
+function logThis() {
+    console.log('Dentro de uma função...')
+    console.log(this=== exports) // false
+    console.log(this === global) // true
+}
+logThis() // dentro de uma função não aponta como exports
